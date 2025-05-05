@@ -6471,24 +6471,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nazca-nuxt@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "nazca-nuxt@workspace:."
-  dependencies:
-    "@nuxt/eslint": 1.2.0
-    "@nuxt/image": 1.10.0
-    "@nuxt/scripts": 0.11.5
-    "@nuxtjs/tailwindcss": ^6.13.2
-    "@pinia/nuxt": 0.10.1
-    "@unhead/vue": ^2.0.0-rc.8
-    eslint: ^9.0.0
-    nuxt: ^3.16.1
-    pinia: ^3.0.1
-    vue: ^3.5.13
-    vue-router: ^4.5.0
-  languageName: unknown
-  linkType: soft
-
 "negotiator@npm:0.6.3":
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
@@ -6753,6 +6735,24 @@ __metadata:
   checksum: 5afc3dafcd1573b08877ca8e6148c52abd565f1d06b1eb08caf982e3fa289a82f2cae697ffb55b5021e146d60443f1590a5d6b944844e944714a5b549675bcd3
   languageName: node
   linkType: hard
+
+"nuxt-for-wordpress@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "nuxt-for-wordpress@workspace:."
+  dependencies:
+    "@nuxt/eslint": 1.2.0
+    "@nuxt/image": 1.10.0
+    "@nuxt/scripts": 0.11.5
+    "@nuxtjs/tailwindcss": ^6.13.2
+    "@pinia/nuxt": 0.10.1
+    "@unhead/vue": ^2.0.0-rc.8
+    eslint: ^9.0.0
+    nuxt: ^3.16.1
+    pinia: ^3.0.1
+    vue: ^3.5.13
+    vue-router: ^4.5.0
+  languageName: unknown
+  linkType: soft
 
 "nuxt@npm:^3.16.1":
   version: 3.16.1

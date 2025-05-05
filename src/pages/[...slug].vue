@@ -12,7 +12,15 @@
 </template>
 
 <script setup>
+import { onBeforeMount } from 'vue'
+
 const pageStore = usePageStore()
 const route = useRoute()
+const config = useRuntimeConfig()
+
+if (!import.meta.server && import.meta.dev && !pageStore.getCurrentPage) {
+  // In Dev mode, fetch each page when visited
+  await pageStore.fetchCurrentPage({ apiBase: config.public.apiBase })
+}
 </script>
 

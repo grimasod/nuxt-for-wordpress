@@ -11,9 +11,10 @@ export default defineNuxtConfig({
   ],
   srcDir: 'src/',
   runtimeConfig: {
+    gtagConfig: '',
     apiKey: '',
     public: {
-      apiBase: 'https://nazcasolution.com/wp-json/wp/v2/'
+      apiBase: ''
     }
   }
 })

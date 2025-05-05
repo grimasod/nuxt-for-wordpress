@@ -35,17 +35,19 @@ useHead({
     { rel:'manifest', href:'/site.webmanifest' }
   ],
   // Google tag (gtag.js)
-  script: [
-    { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-7QJL6Z3Y9T' },
-    { 
-      innerHTML: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7QJL6Z3Y9T');
-      `
-    }
-  ]
+  ...!import.meta.dev && {
+    script: [
+      { async: true, src: `https://www.googletagmanager.com/gtag/js?id=G-7QJL6Z3Y9T${config.gtagConfig}` },
+      { 
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${config.gtagConfig}');
+        `
+      }
+    ]
+  }
 })
 
 const setupPage = async (slug) => {
@@ -64,7 +66,10 @@ if (route.params.slug !== undefined) {
 if (import.meta.server) {
   await menuStore.fetchMenu({ apiBase: config.public.apiBase, apiKey: config.apiKey})
   await menuStore.fetchHeaderImage({ apiBase: config.public.apiBase })
-  await pageStore.fetchAllPagees({ apiBase: config.public.apiBase })
+  if (!import.meta.dev) {
+    // prefetch all pages for SSG
+    await pageStore.fetchAllPages({ apiBase: config.public.apiBase })
+  }
 }
 
 watch(

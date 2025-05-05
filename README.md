@@ -1,6 +1,8 @@
-# Nuxt Minimal Starter
+# Nuxt for WordPress
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+An example of using Nuxt to generate a static frontend for a WordPress site.
+
+It's cuztomized for a specific site, but many of the techniques can be applied generally.
 
 ## Setup
 
@@ -11,12 +13,19 @@ Make sure to install dependencies:
 yarn install
 ```
 
+## Env
+
+```bash
+NUXT_PUBLIC_API_BASE=https://example.com/wp-json/wp/v2/
+NUXT_API_KEY=ABCDEFGHIJKLMNOP
+NUXT_GTAG_CONFIG=G-1234567
+```
+
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 # yarn
 yarn dev
 ```
@@ -27,14 +36,11 @@ Build the application for production:
 
 ````bash
 # yarn
-yarn build
+yarn generate
 
 Locally preview production build:
 
 ```bash
 # yarn
 yarn preview
-
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 ````

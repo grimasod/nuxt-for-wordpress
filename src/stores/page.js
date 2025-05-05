@@ -38,9 +38,7 @@ export const usePageStore = defineStore('page', {
   },
   actions: {
     async fetchPage ({ apiBase, slug }) {
-      console.log('fetchPage slug', slug)
       const fetchedPage = await useApi(`${apiBase}pages?slug=${slug}&_fields=slug,title,content`)
-      console.log('fetchedPage.length', fetchedPage.length)
       if (fetchedPage && Array.isArray(fetchedPage)) {
         this.pages = [
           ...this.getPages,
@@ -53,10 +51,9 @@ export const usePageStore = defineStore('page', {
         ]
       }
     },
-    async fetchAllPagees ({ apiBase }) {
+    async fetchAllPages ({ apiBase }) {
       const menuStore = useMenuStore()
       const slugs = menuStore.getSlugs
-      console.log('fetchPage slugs', slugs)
       for (const slug of slugs) {
         const fetchedPage = await useApi(`${apiBase}pages?slug=${slug}&_fields=slug,title,content`)
         console.log('fetchedPage.length', slug, fetchedPage.length)
@@ -72,7 +69,9 @@ export const usePageStore = defineStore('page', {
           ]
         }
       }
-      
+    },
+    async fetchCurrentPage ({ apiBase }) {
+      this.fetchPage({ apiBase, slug: this.currentSlug })
     },
     async setCurrentSlug ({ slug }) {
       this.currentSlug = slug
