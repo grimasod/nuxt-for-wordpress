@@ -37,13 +37,13 @@ useHead({
   // Google tag (gtag.js)
   ...!import.meta.dev && {
     script: [
-      { async: true, src: `https://www.googletagmanager.com/gtag/js?id=G-7QJL6Z3Y9T${config.gtagConfig}` },
+      { async: true, src: `https://www.googletagmanager.com/gtag/js?id=${config.public.gtagConfig}` },
       { 
         innerHTML: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${config.gtagConfig}');
+          gtag('config', '${config.public.gtagConfig}');
         `
       }
     ]

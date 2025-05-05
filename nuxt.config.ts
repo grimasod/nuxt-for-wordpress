@@ -11,10 +11,10 @@ export default defineNuxtConfig({
   ],
   srcDir: 'src/',
   runtimeConfig: {
-    gtagConfig: '',
     apiKey: '',
     public: {
-      apiBase: ''
+      apiBase: '',
+      gtagConfig: ''
     }
   }
 })
