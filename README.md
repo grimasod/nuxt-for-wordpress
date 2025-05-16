@@ -34,9 +34,10 @@ yarn dev
 
 Build the application for production:
 
-````bash
+```bash
 # yarn
 yarn generate
+```
 
 Locally preview production build:
 
