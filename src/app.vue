@@ -28,6 +28,12 @@ const route = useRoute()
 
 useHead({
   title: 'The Nazca Solution',
+  meta: [
+    { name: 'description', content: `This website presents the Nazca Great Circle Map Hypothesis:
+    the hypothesis that the Nazca Lines represent an ancient great circle map.
+    The website includes a computer simulation of random great circles equivalent to a null-hypothesis experiment
+    and presents all data and the statistically significant results that validate the hypothesis.` }
+  ],
   link: [
     { rel:'apple-touch-icon', sizes:'180x180', href:'/apple-touch-icon.png' },
     { rel:'icon', type:'image/png', sizes:'32x32', href:'/favicon-32x32.png' },
